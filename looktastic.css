@@ -1,16 +1,13 @@
  body{
-    background-color:#C8F7C5;
+    background-color:#33FFF9;
 }
 
 h1 {
     text-align: center;
-    font-family:
+    font-family: "times new roman", Times, serif;
     background-image: url("http://hdpix.top/images/88449-simple-green-powerpoint-background.jpg");
 }
-"times new roman", Times, serif;
-}
 
-<style>
 .dropdown {
     position: relative;
     display: inline-block;
@@ -25,7 +22,21 @@ h1 {
     padding: 12px 16px;
     z-index: 1;
 }
-
+button{
+    background-color:#D35400;
+font-size: 20px;
+color: #FFD8D2;
+line-height: 24px;
+font-weight: 400;
+padding: 15px 37px 15px 23px;
+border: 1px solid #FFD8D2;
+height: 54px;
+vertical-align: top;
+margin: 0 8px;
+background-repeat: no-repeat;
+transition: color .1s,background-color .1s;
+border-radius:15px;
+}
 .dropdown:hover .dropdown-content {
     display: block;
 }
