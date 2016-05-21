@@ -5,7 +5,7 @@ function myFunction() {
 $(document).ready(function(){
     console.log("loaded")
   window.onclick = function(event) {
-    console.log("clicked")
+    // console.log("clicked")
     
   if (!event.target.matches('.dropbtn')) {
 
@@ -25,6 +25,33 @@ var sampleObject = {
             R:5
     }
    }
+   
+   var objects = [
+    {image: "www.cool.com",
+     votes: {
+        L: 0,
+        R: 0
+     }    
+    }, 
+    {image: "www.rad.com",
+     votes: {
+        L: 0,
+        R: 0
+     }    
+    },
+    {image: "www.nice.com",
+     votes: {
+        L: 0,
+        R: 0
+     }    
+    } 
+]
+
+
+$( "#leftButton" ).click(function() {
+  alert(objects[1].votes.L);
+  
+});
 });
   
   console.log("ok")
@@ -51,8 +78,8 @@ window.pAsyncInit = function() {
           var images=[];
           for (var i=0; i < pins.length; i++) {
             images.push(pins[i].image.original.url);
-            window.imagesReceived(images);
           }
+          window.imagesReceived(images);
         }
         
       }
@@ -65,8 +92,17 @@ window.imagesReceived = function(images) {
   var imageFromPinterest = $("#imageFromPinterest");
   console.log(imageFromPinterest);
   
-imageFromPinterest.attr( "src", images[1] );
+  var currentImage = 0; 
+  imageFromPinterest.attr( "src", images[currentImage] );
+  
+  imageFromPinterest.bind("click", function () {
+    currentImage++;
+    imageFromPinterest.attr("src", images[currentImage] );
+  })
+  
+  
 };
+
 
 /*
 var sampleObject = {image: "https://s-media-cache-ak0.pinimg.com/564x/d1/a0/97/d1a09766823917524605f87c982a1906.jpg",
@@ -114,6 +150,19 @@ sampleObject.votes.L
 "SyntaxError: Unexpected token ILLEGAL"
 "error"
 "SyntaxError: Unexpected token ILLEGAL"
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<div id="targetArea"><div/>
+</body>
 
 */
     
